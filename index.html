@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Promotion Agent Recruitment - 30% Commission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #f8f9fa;
+    --color-text: #1a1a2e;
+    --color-text-secondary: #6b7280;
+    --color-primary: #0f0f23;
+    --color-accent: #e94560;
+    --color-accent-hover: #d63850;
+    --color-telegram: #0088cc;
+    --color-telegram-hover: #0077b3;
+    --color-border: #e5e7eb;
+    --color-success: #10b981;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --font: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    --hero-height: auto;
+  }
+
+  [lang="ar"] {
+    --font: 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #0f0f1a;
+      --color-surface: #1a1a2e;
+      --color-text: #f0f0f5;
+      --color-text-secondary: #9ca3af;
+      --color-primary: #1a1a30;
+      --color-border: #2d2d45;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 72px;
+  }
+
+  .lang-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .lang-bar select {
+    font-family: var(--font);
+    font-size: 12px;
+    padding: 6px 10px;
+    min-height: 32px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    outline: none;
+    appearance: auto;
+  }
+
+  .lang-bar select option {
+    color: #1a1a2e;
+    background: #fff;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #16213e 100%);
+    color: #fff;
+    padding: var(--space-3xl) var(--space-lg) var(--space-2xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero h1 {
+    font-size: clamp(26px, 7vw, 32px);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.5px;
+    padding-top: var(--space-xl);
+  }
+
+  .hero p {
+    font-size: clamp(14px, 4vw, 16px);
+    opacity: 0.85;
+    max-width: 320px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stat {
+    text-align: center;
+    flex: 1;
+    max-width: 100px;
+  }
+
+  .hero-stat-number {
+    font-size: clamp(18px, 5vw, 22px);
+    font-weight: 900;
+    color: var(--color-accent);
+  }
+
+  .hero-stat-label {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.1s;
+    font-family: var(--font);
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .btn-telegram {
+    background: var(--color-telegram);
+    color: #fff;
+  }
+
+  .btn-telegram:hover {
+    background: var(--color-telegram-hover);
+  }
+
+  .btn-hero {
+    font-size: 17px;
+    padding: 16px 32px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+  }
+
+  .benefit-card {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-md);
+    align-items: flex-start;
+    border: 1px solid var(--color-border);
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.2s;
+  }
+
+  .benefit-card:active {
+    border-color: var(--color-accent);
+  }
+
+  .benefit-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--color-accent);
+  }
+
+  .benefit-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .benefit-card p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    counter-reset: step;
+  }
+
+  .step-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+  }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-item p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .testimonial {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--color-border);
+    position: relative;
+  }
+
+  .testimonial::before {
+    content: '\201C';
+    font-size: 40px;
+    color: var(--color-accent);
+    opacity: 0.3;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text);
+    padding-left: var(--space-lg);
+  }
+
+  .testimonial-author {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-top: var(--space-sm);
+    padding-left: var(--space-lg);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-lg) 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .faq-q {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    font-family: var(--font);
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    text-align: left;
+    width: 100%;
+  }
+
+  .faq-q::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    transition: transform 0.2s;
+  }
+
+  .faq-q.open::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    display: none;
+  }
+
+  .faq-a.open {
+    display: block;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+    color: #fff;
+  }
+
+  .cta-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-section p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: var(--space-xl);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-section .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+
+  .bottom-bar .btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+
+  .reply-time {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: var(--space-sm);
+  }
+
+  .footnote {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: var(--space-md);
+  }
+
+  .disclaimer {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--space-md);
+    line-height: 1.4;
+  }
+
+  .affiliate-disclosure {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--space-lg);
+    line-height: 1.5;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .legal-link {
+    color: var(--color-text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-link:hover {
+    color: var(--color-accent);
+  }
+
+  .legal-row {
+    margin-top: var(--space-sm);
+    font-size: 12px;
+  }
+
+  footer {
+    text-align: center;
+    padding: var(--space-lg);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 380px) {
+    .hero-stats { gap: var(--space-md); }
+    .hero-stat { max-width: 80px; }
+    .section { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+    .step-item { padding: var(--space-sm) var(--space-md); }
+    .testimonial { padding: var(--space-md); }
+    .benefit-card { padding: var(--space-sm); }
+  }
+
+  @media (min-width: 768px) {
+    body { padding-bottom: 0; }
+    .hero h1 { font-size: 42px; padding-top: 0; }
+    .hero p { font-size: 18px; max-width: 480px; }
+    .hero-stats { gap: var(--space-2xl); }
+    .hero-stat { max-width: none; }
+    .hero-stat-number { font-size: 28px; }
+    .benefit-card { padding: var(--space-xl); }
+    .section { padding: var(--space-2xl) var(--space-lg); max-width: 720px; }
+    .section-header h2 { font-size: 28px; }
+    .benefit-card h3 { font-size: 16px; }
+    .benefit-card p { font-size: 14px; }
+    .cta-section h2 { font-size: 28px; }
+    .bottom-bar { display: none !important; }
+  }
+
+  @media (min-width: 1024px) {
+    .hero { padding: var(--space-3xl) var(--space-2xl) var(--space-2xl); }
+    .hero h1 { font-size: 48px; }
+    .section { max-width: 800px; }
+    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    .benefit-card { margin-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="lang-bar">
+    <select id="lang-select" aria-label="Language">
+      <option value="en">English</option>
+      <option value="ha">Hausa</option>
+      <option value="ar">العربية</option>
+      <option value="fr">Français</option>
+      <option value="yo">Yorùbá</option>
+      <option value="ig">Igbo</option>
+      <option value="zh">简体中文</option>
+    </select>
+  </div>
+  <div class="badge" data-i18n="badge">30% High Commission</div>
+  <h1 data-i18n="heroTitle">Become a Game Promotion Agent</h1>
+  <p data-i18n="heroDesc">Zero startup cost, daily commissions. Promote games you love and earn stable passive income</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-number">30%</div>
+      <div class="hero-stat-label" data-i18n="statCommission">Revenue Share</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number" data-i18n="statCostNum">0</div>
+      <div class="hero-stat-label" data-i18n="statCost">Startup Cost</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number" data-i18n="statDailyNum">Daily</div>
+      <div class="hero-stat-label" data-i18n="statDaily">Daily Payout</div>
+    </div>
+  </div>
+  <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="telegramBtn" aria-label="Contact us via Telegram">Contact via Telegram</a>
+  <div class="reply-time" data-i18n="replyTime">Average reply within 2 minutes</div>
+</header>
+
+<main>
+  <section class="section" aria-labelledby="benefits-heading">
+    <div class="section-header">
+      <h2 id="benefits-heading" data-i18n="benefitsTitle">Why Choose Us</h2>
+      <p data-i18n="benefitsDesc">Best tools and conditions to focus on earning</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">%</div>
+        <div>
+          <h3 data-i18n="benefit1Title">30% Revenue Share</h3>
+          <p data-i18n="benefit1Desc">Earn commission when players you refer play games. Daily settlement, no minimum withdrawal</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">O</div>
+        <div>
+          <h3 data-i18n="benefit2Title">Start for Free</h3>
+          <p data-i18n="benefit2Desc">No deposit, no inventory. Register and get agent access immediately</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">G</div>
+        <div>
+          <h3 data-i18n="benefit3Title">Premium Games</h3>
+          <p data-i18n="benefit3Desc">Mature game products with high player retention for better earnings</p>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">D</div>
+        <div>
+          <h3 data-i18n="benefit4Title">Real-time Dashboard</h3>
+          <p data-i18n="benefit4Desc">Track your promotion data, player deposits, and settled commissions with full transparency</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="steps-heading">
+    <div class="section-header">
+      <h2 id="steps-heading" data-i18n="stepsTitle">3 Steps to Become an Agent</h2>
+      <p data-i18n="stepsDesc">Simple steps to start earning commissions</p>
+    </div>
+    <div class="steps">
+      <div class="step-item">
+        <span class="step-num" aria-hidden="true">1</span>
+        <p data-i18n="step1">Click the button below to add our Telegram support</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num" aria-hidden="true">2</span>
+        <p data-i18n="step2">Talk to our team to activate your agent account</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num" aria-hidden="true">3</span>
+        <p data-i18n="step3">Get your referral link and start earning</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="section-header">
+      <h2 id="testimonials-heading" data-i18n="testimonialsTitle">Agent Testimonials</h2>
+      <p data-i18n="testimonialsDesc">Hear from our agents</p>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text" data-i18n="testimonial1Text">After two months, I now earn 8000+ monthly. Just invite friends to play and you will earn income — simpler than I thought.</div>
+      <div class="testimonial-author" data-i18n="testimonial1Author">— James, 2 months</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text" data-i18n="testimonial2Text">On my first day I referred 5 people and earned $200 commission. Daily payout is real and fast.</div>
+      <div class="testimonial-author" data-i18n="testimonial2Author">— Sarah, 1 month</div>
+    </div>
+    <p class="disclaimer" data-i18n="disclaimer">Results not typical. Individual results may vary.</p>
+  </section>
+
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="section-header">
+      <h2 id="faq-heading" data-i18n="faqTitle">FAQ</h2>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q" aria-expanded="false" data-i18n="faq1q">What do I need to become an agent?</button>
+      <div class="faq-a" data-i18n="faq1a">No requirements at all. As long as you have a phone and can use Telegram, you can become an agent. We provide full training and marketing materials.</div>
+    </div>
+    <div class="faq-item">
+      <button type="button" class="faq-q" aria-expanded="false" data-i18n="faq3q">Can I recruit sub-agents?</button>
+      <div class="faq-a" data-i18n="faq3a">Yes. You can build your own team and earn extra commissions from your sub-agents' revenue. Contact us for details.</div>
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" data-i18n="ctaTitle">Start Promoting Today</h2>
+    <p data-i18n="ctaDesc">Zero cost to start — join today, start earning tomorrow</p>
+    <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="ctaBtn" aria-label="Contact us via Telegram">Contact via Telegram</a>
+    <div class="footnote" data-i18n="ctaNote">No extra software needed · Free consultation</div>
+  </section>
+</main>
+
+<footer>
+  <p data-i18n="footer">Game Promotion Agent Platform © 2025</p>
+  <p class="affiliate-disclosure" data-i18n="affiliateDisclosure">This page contains affiliate links. We may earn a commission at no extra cost to you.</p>
+  <p class="legal-row"><a class="legal-link" href="/privacy-policy" data-i18n="privacyLink">Privacy Policy</a></p>
+</footer>
+
+<div class="bottom-bar" id="bottomBar">
+  <a class="btn btn-telegram" href="https://t.me/masontiny" data-i18n="ctaBtn">Contact via Telegram</a>
+</div>
+
+<script>
+const i18n = {
+  zh: {
+    badge: '30% 高额佣金',
+    heroTitle: '成为游戏推广代理',
+    heroDesc: '零成本启动，日结佣金。推广你喜欢的游戏，赚取稳定被动收入',
+    statCommission: '流水佣金',
+    statCostNum: '0',
+    statCost: '启动成本',
+    statDailyNum: '日结',
+    statDaily: '佣金到账',
+    telegramBtn: '添加 Telegram 咨询',
+    replyTime: '平均 2 分钟内回复',
+    benefitsTitle: '为什么选择我们',
+    benefitsDesc: '给你最好的工具和条件，专注推广赚钱',
+    benefit1Title: '30% 流水佣金',
+    benefit1Desc: '你推广的玩家参与游戏就会有佣金。日结不压款，提现无门槛',
+    benefit2Title: '零成本启动',
+    benefit2Desc: '无需押金、无需囤货。注册即开通代理权限，立即开始推广',
+    benefit3Title: '精品游戏支持',
+    benefit3Desc: '已上线运营的成熟游戏产品，玩家留存率高，你的推广更有价值',
+    benefit4Title: '实时数据看板',
+    benefit4Desc: '随时查看你的推广数据、玩家充值明细和已结算佣金，完全透明',
+    stepsTitle: '三步成为代理',
+    stepsDesc: '简单三步，开始赚取佣金',
+    step1: '点击下方按钮添加 Telegram 客服',
+    step2: '客服对接，开通你的专属代理账号',
+    step3: '获取推广链接，开始赚取佣金',
+    testimonialsTitle: '代理真实反馈',
+    testimonialsDesc: '听听其他代理怎么说',
+    testimonial1Text: '做了两个月，现在稳定月入 8000+。其实就是拉朋友一起玩就有收入，比想象中简单。',
+    testimonial1Author: '— James，在职 2 个月',
+    testimonial2Text: '第一天拉了 5 个人，当天就拿到了 $200 佣金。日结是真的，到账很快。',
+    testimonial2Author: '— Sarah，在职 1 个月',
+    faqTitle: '常见问题',
+    faq1q: '做代理需要什么条件？',
+    faq1a: '没有任何门槛。只要你有一部手机，会使用 Telegram，就能成为代理。我们提供完整的培训和推广素材。',
+    faq3q: '可以发展下级代理吗？',
+    faq3a: '可以。你可以发展自己的团队，下级代理的推广流水你也能获得额外分成。具体比例请联系客服了解。',
+    ctaTitle: '立即开始推广',
+    ctaDesc: '零成本启动，今天就加入，明天开始赚佣金',
+    ctaBtn: '添加 Telegram 咨询',
+    ctaNote: '无需下载额外软件 · 免费咨询',
+    footer: '游戏推广代理招募平台 © 2025',
+    disclaimer: '结果非典型。实际收入因人而异。',
+    affiliateDisclosure: '本页包含推广链接。我们可能从中获得佣金，不对您产生额外费用。',
+    privacyLink: '隐私政策',
+  },
+  en: {
+    badge: '30% High Commission',
+    heroTitle: 'Become a Game Promotion Agent',
+    heroDesc: 'Zero startup cost, daily commissions. Promote games you love and earn stable passive income',
+    statCommission: 'Revenue Share',
+    statCostNum: '0',
+    statCost: 'Startup Cost',
+    statDailyNum: 'Daily',
+    statDaily: 'Daily Payout',
+    telegramBtn: 'Contact via Telegram',
+    replyTime: 'Average reply within 2 minutes',
+    benefitsTitle: 'Why Choose Us',
+    benefitsDesc: 'Best tools and conditions to focus on earning',
+    benefit1Title: '30% Revenue Share',
+    benefit1Desc: 'Earn commission when players you refer play games. Daily settlement, no minimum withdrawal',
+    benefit2Title: 'Start for Free',
+    benefit2Desc: 'No deposit, no inventory. Register and get agent access immediately',
+    benefit3Title: 'Premium Games',
+    benefit3Desc: 'Mature game products with high player retention for better earnings',
+    benefit4Title: 'Real-time Dashboard',
+    benefit4Desc: 'Track your promotion data, player deposits, and settled commissions with full transparency',
+    stepsTitle: '3 Steps to Become an Agent',
+    stepsDesc: 'Simple steps to start earning commissions',
+    step1: 'Click the button below to add our Telegram support',
+    step2: 'Talk to our team to activate your agent account',
+    step3: 'Get your referral link and start earning',
+    testimonialsTitle: 'Agent Testimonials',
+    testimonialsDesc: 'Hear from our agents',
+    testimonial1Text: 'After two months, I now earn 8000+ monthly. Just invite friends to play and you will earn income — simpler than I thought.',
+    testimonial1Author: '— James, 2 months',
+    testimonial2Text: 'On my first day I referred 5 people and earned $200 commission. Daily payout is real and fast.',
+    testimonial2Author: '— Sarah, 1 month',
+    faqTitle: 'FAQ',
+    faq1q: 'What do I need to become an agent?',
+    faq1a: 'No barriers at all. As long as you have a phone and can use Telegram, you can become an agent. We provide full training and marketing materials.',
+    faq3q: 'Can I recruit sub-agents?',
+    faq3a: 'Yes. You can build your own team and earn extra commissions from your sub-agents\' revenue. Contact us for details.',
+    ctaTitle: 'Start Promoting Today',
+    ctaDesc: 'Zero cost to start — join today, start earning tomorrow',
+    ctaBtn: 'Contact via Telegram',
+    ctaNote: 'No extra software needed · Free consultation',
+    footer: 'Game Promotion Agent Platform © 2025',
+    disclaimer: 'Results not typical. Individual results may vary.',
+    affiliateDisclosure: 'This page contains affiliate links. We may earn a commission at no extra cost to you.',
+    privacyLink: 'Privacy Policy',
+  },
+  ha: {
+    badge: '30% Babban Kuɗi',
+    heroTitle: 'Ka zama Wakilin Tallan Wasa',
+    heroDesc: 'Fara ba tare da kuɗi ba, biya kullum. Tallata wasannin da kake so, ka sami kuɗi akai-akai',
+    statCommission: 'Ribar Kuɗi',
+    statCostNum: '0',
+    statCost: 'Kuɗin Farawa',
+    statDailyNum: 'Kullum',
+    statDaily: 'Biya Kullum',
+    telegramBtn: 'Tuntuɓi ta Telegram',
+    replyTime: 'Ana amsawa cikin minti 2',
+    benefitsTitle: 'Me ya sa za mu zaɓa',
+    benefitsDesc: 'Muna ba ka kayan aiki mafi kyau don samun kuɗi',
+    benefit1Title: '30% Ribar Kuɗi',
+    benefit1Desc: 'Ka sami riba lokacin da ƴan wasan da ka kawo suka yi wasa. Ana biya kullum',
+    benefit2Title: 'Fara Kyauta',
+    benefit2Desc: 'Babu jingina, babu kaya. Ka yi rajista kuma ka fara talla nan take',
+    benefit3Title: 'Wasanni Masu Kyau',
+    benefit3Desc: 'Nagartattun wasanni waɗanda ke ci gaba da jan hankalin ƴan wasa',
+    benefit4Title: 'Duban Bayanai',
+    benefit4Desc: 'Ka duba yadda tallan ka ke tafiya a kowane lokaci, cikakken bayyane',
+    stepsTitle: 'Matakai 3 don zama Wakili',
+    stepsDesc: 'Matakai masu sauƙi don fara samun kuɗi',
+    step1: 'Danna maɓallin da ke ƙasa don ƙara Telegram客服',
+    step2: 'Tattauna da ƙungiyarmu don kunna asusunka',
+    step3: 'Sami hanyar tallan ka kuma fara samun kuɗi',
+    testimonialsTitle: 'Abin da Wakilanmu ke cewa',
+    testimonialsDesc: 'Ji daga bakin wakilanmu',
+    testimonial1Text: 'Bayan wata biyu, ina samun sama da 8,000 a kowane wata. Kawai ka gayyaci abokai don yin wasa — ya fi sauƙi fiye da yadda nake zato.',
+    testimonial1Author: '— James, wata 2',
+    testimonial2Text: 'A rana ta farko na kawo mutum 5 kuma na sami $200. Biyan kullum gaskiya ne kuma yana sauri.',
+    testimonial2Author: '— Sarah, wata 1',
+    faqTitle: 'Tambayoyi',
+    faq1q: 'Menene ake buƙata don zama wakili?',
+    faq1a: 'Babu wani sharadi. Idan kana da waya kuma kana iya amfani da Telegram, za ka iya zama wakili. Muna ba da cikakken horo.',
+    faq3q: 'Zan iya ɗaukar wakilai a ƙarƙashina?',
+    faq3a: 'E. Za ka iya gina ƙungiyarka kuma ka sami ƙarin riba daga wakilan ka. Tuntuɓe mu don cikakkun bayanai.',
+    ctaTitle: 'Fara Tallan Yau',
+    ctaDesc: 'Fara kyauta — shiga yau, fara samun kuɗi gobe',
+    ctaBtn: 'Tuntuɓi ta Telegram',
+    ctaNote: 'Babu buƙatar sauran Software · Shawara kyauta',
+    footer: 'Dandalin Wakilan Tallan Wasa © 2025',
+    disclaimer: 'Sakamako ba na al\'ada ba. Sakamako na iya bambanta.',
+    affiliateDisclosure: 'Wannan shafi yana ƙunshe da hanyoyin haɗin gwiwa. Za mu iya samun riba ba tare da ƙarin kuɗi ba.',
+    privacyLink: 'Manufofin Keɓewa',
+  },
+  ar: {
+    badge: 'عمولة عالية 30%',
+    heroTitle: 'كن وكيل ترويج الألعاب',
+    heroDesc: 'انطلق بتكلفة صفر، واستلم عمولاتك يومياً. روّج للألعاب التي تحبها واكسب دخلاً ثابتاً',
+    statCommission: 'حصة الإيرادات',
+    statCostNum: 'صفر',
+    statCost: 'تكلفة البدء',
+    statDailyNum: 'يومي',
+    statDaily: 'دفع يومي',
+    telegramBtn: 'تواصل عبر تيليغرام',
+    replyTime: 'متوسط الرد خلال دقيقتين',
+    benefitsTitle: 'لماذا تختارنا',
+    benefitsDesc: 'أفضل الأدوات والشروط لتتفرغ للربح',
+    benefit1Title: 'عمولة 30%',
+    benefit1Desc: 'اكسب عمولة عندما يلعب اللاعبون الذين أحضرتهم. تسوية يومية، بدون حد أدنى للسحب',
+    benefit2Title: 'بدء بدون تكلفة',
+    benefit2Desc: 'لا ودائع، لا مخزون. سجل واحصل على صلاحية الوكيل فوراً',
+    benefit3Title: 'ألعاب متميزة',
+    benefit3Desc: 'ألعاب ناضجة مع نسبة احتفاظ عالية باللاعبين لتحقيق أرباح أفضل',
+    benefit4Title: 'لوحة بيانات فورية',
+    benefit4Desc: 'تتبع بيانات ترويجك وإيداعات اللاعبين والعمولات المدفوعة بشفافية كاملة',
+    stepsTitle: '3 خطوات لتصبح وكيلاً',
+    stepsDesc: 'خطوات بسيطة لبدء كسب العمولات',
+    step1: 'انقر الزر أدناه لإضافة خدمة عملاء تيليغرام',
+    step2: 'تحدث مع فريقنا لتفعيل حساب الوكيل الخاص بك',
+    step3: 'احصل على رابط الإحالة وابدأ في الكسب',
+    testimonialsTitle: 'شهادات الوكلاء',
+    testimonialsDesc: 'استمع إلى وكلائنا',
+    testimonial1Text: 'بعد شهرين، أصبح راتبي الشهري يتجاوز 8000. فقط أدعو الأصدقاء للعب — أبسط مما توقعت.',
+    testimonial1Author: '— جيمس، شهران',
+    testimonial2Text: 'في يومي الأول أحضرت 5 أشخاص وحصلت على 200 دولار عمولة. الدفع اليومي حقيقي وسريع.',
+    testimonial2Author: '— سارة، شهر واحد',
+    faqTitle: 'الأسئلة الشائعة',
+    faq1q: 'ماذا أحتاج لأصبح وكيلاً؟',
+    faq1a: 'لا توجد متطلبات. طالما لديك هاتف ويمكنك استخدام تيليغرام، يمكنك أن تصبح وكيلاً. نقدم تدريباً كاملاً ومواد تسويقية.',
+    faq3q: 'هل يمكنني تجنيد وكلاء فرعيين؟',
+    faq3a: 'نعم. يمكنك بناء فريقك الخاص وكسب عمولات إضافية من إيرادات وكلائك الفرعيين. اتصل بنا للتفاصيل.',
+    ctaTitle: 'ابدأ الترويج اليوم',
+    ctaDesc: 'تكلفة صفر للبدء — انضم اليوم، وابدأ الكسب غداً',
+    ctaBtn: 'تواصل عبر تيليغرام',
+    ctaNote: 'لا حاجة لبرامج إضافية · استشارة مجانية',
+    footer: 'منصة وكيل ترويج الألعاب © 2025',
+    disclaimer: 'النتائج ليست نموذجية. النتائج الفردية قد تختلف.',
+    affiliateDisclosure: 'تحتوي هذه الصفحة على روابط تابعة. قد نكسب عمولة دون تكلفة إضافية عليك.',
+    privacyLink: 'سياسة الخصوصية',
+  },
+  fr: {
+    badge: 'Commission élevée de 30%',
+    heroTitle: 'Devenez Agent de Promotion de Jeux',
+    heroDesc: 'Démarrez sans frais, commissions quotidiennes. Promouvez les jeux que vous aimez et gagnez un revenu passif stable',
+    statCommission: 'Part des Revenus',
+    statCostNum: '0',
+    statCost: 'Coût de Démarrage',
+    statDailyNum: 'Quotidien',
+    statDaily: 'Paiement Quotidien',
+    telegramBtn: 'Contactez-nous sur Telegram',
+    replyTime: 'Réponse moyenne en 2 minutes',
+    benefitsTitle: 'Pourquoi Nous Choisir',
+    benefitsDesc: 'Les meilleurs outils et conditions pour vous concentrer sur le profit',
+    benefit1Title: 'Commission de 30%',
+    benefit1Desc: 'Gagnez une commission quand les joueurs que vous avez recommandés jouent. Règlement quotidien, sans seuil de retrait',
+    benefit2Title: 'Démarrage Zéro Coût',
+    benefit2Desc: 'Pas de dépôt, pas de stock. Inscrivez-vous et obtenez un accès agent immédiatement',
+    benefit3Title: 'Jeux Premium',
+    benefit3Desc: 'Des jeux matures avec un taux de rétention élevé pour de meilleurs revenus',
+    benefit4Title: 'Tableau de Bord en Temps Réel',
+    benefit4Desc: 'Suivez vos données de promotion, dépôts des joueurs et commissions réglées en toute transparence',
+    stepsTitle: '3 Étapes pour Devenir Agent',
+    stepsDesc: 'Des étapes simples pour commencer à gagner',
+    step1: 'Cliquez sur le bouton ci-dessous pour ajouter notre service Telegram',
+    step2: 'Parlez à notre équipe pour activer votre compte agent',
+    step3: 'Obtenez votre lien de parrainage et commencez à gagner',
+    testimonialsTitle: 'Témoignages d\'Agents',
+    testimonialsDesc: 'Ce que disent nos agents',
+    testimonial1Text: 'Après deux mois, je gagne plus de 8000 par mois. Il suffit d\'inviter des amis à jouer — plus simple que je ne le pensais.',
+    testimonial1Author: '— James, 2 mois',
+    testimonial2Text: 'Mon premier jour j\'ai amené 5 personnes et gagné 200$ de commission. Le paiement quotidien est réel et rapide.',
+    testimonial2Author: '— Sarah, 1 mois',
+    faqTitle: 'FAQ',
+    faq1q: 'De quoi ai-je besoin pour devenir agent ?',
+    faq1a: 'Aucune condition. Si vous avez un téléphone et savez utiliser Telegram, vous pouvez devenir agent. Nous offrons une formation complète.',
+    faq3q: 'Puis-je recruter des sous-agents ?',
+    faq3a: 'Oui. Vous pouvez constituer votre propre équipe et gagner des commissions supplémentaires sur les revenus de vos sous-agents.',
+    ctaTitle: 'Commencez à Promouvoir Aujourd\'hui',
+    ctaDesc: 'Coût zéro pour démarrer — rejoignez aujourd\'hui, gagnez demain',
+    ctaBtn: 'Contactez-nous sur Telegram',
+    ctaNote: 'Aucun logiciel supplémentaire · Consultation gratuite',
+    footer: 'Plateforme d\'Agent de Promotion de Jeux © 2025',
+    disclaimer: 'Résultats non typiques. Les résultats individuels peuvent varier.',
+    affiliateDisclosure: 'Cette page contient des liens d\'affiliation. Nous pouvons percevoir une commission sans frais supplémentaires pour vous.',
+    privacyLink: 'Politique de Confidentialité',
+  },
+  yo: {
+    badge: '30% Owo-igbimọ Ga',
+    heroTitle: 'Di Aṣoju Ipolowo Ere',
+    heroDesc: 'Bẹrẹ laisi iye owo, isanwo ojoojumo. Polowo awọn ere ti o fẹran, ki o jere owó iduroṣinṣin',
+    statCommission: 'Ipín Owo',
+    statCostNum: '0',
+    statCost: 'Iye Owo Ibẹrẹ',
+    statDailyNum: 'Ojoojumo',
+    statDaily: 'Sanwo Ojoojumo',
+    telegramBtn: 'Kan si wa nipasẹ Telegram',
+    replyTime: 'Aṣiwere idahun laarin iṣẹju 2',
+    benefitsTitle: 'Kí Ló Dé Tí A Fi Yàn Á',
+    benefitsDesc: 'Awọn irinṣẹ ti o dara julọ lati dojukọ pipa owo',
+    benefit1Title: '30% Ipín Owo',
+    benefit1Desc: 'Jere owo-igbimọ nigbati awọn elere ti o darí ba ngba ere. Isanwo ojoojumo',
+    benefit2Title: 'Bẹrẹ Laisi Owo',
+    benefit2Desc: 'Ko si idogo, ko si ọja. Forukọsilẹ ki o bẹrẹ ipolowo lẹsẹkẹsẹ',
+    benefit3Title: 'Awọn Ere Didara',
+    benefit3Desc: 'Awọn ere ti o dagba ti o ni idaduro elere ga fun dídára jere',
+    benefit4Title: 'Dasibodu Gidi-akoko',
+    benefit4Desc: 'Tọpa data ipolowo rẹ, idogo elere ati awọn owo-igbimọ ti a san ni kikun sihin',
+    stepsTitle: 'Awọn Igbesẹ 3 lati Di Aṣoju',
+    stepsDesc: 'Awọn igbesẹ rọrun lati bẹrẹ jija owo-igbimọ',
+    step1: 'Tẹ bọtini ni isalẹ lati fi Telegram客服 wa kun',
+    step2: 'Ba ẹgbẹ wa sọrọ lati mu akọọlẹ aṣoju rẹ ṣiṣẹ',
+    step3: 'Gba ọna asopọ itọka rẹ ki o bẹrẹ jija',
+    testimonialsTitle: 'Awọn Ẹri Aṣoju',
+    testimonialsDesc: 'Gbọ lati ẹnu awọn aṣoju wa',
+    testimonial1Text: 'Lẹhin oṣu meji, mo n jere 8000+ loṣooṣu. O rọrun ju bi mo ti ro lọ.',
+    testimonial1Author: '— James, oṣu 2',
+    testimonial2Text: 'Ni ọjọ akọkọ mo mu eniyan 5 wọle mo si jere $200. Isanwo ojoojumo jẹ gidi o si yara.',
+    testimonial2Author: '— Sarah, oṣu 1',
+    faqTitle: 'Awọn Ibeere',
+    faq1q: 'Kí ni mo nilo lati di aṣoju?',
+    faq1a: 'Ko si awọn ibeere. Ti o ba ni foonu ti o le lo Telegram, o le di aṣoju. A pese ikẹkọ ni kikun.',
+    faq3q: 'Ṣe Mo le gba awọn aṣoju labẹ mi?',
+    faq3a: 'Bẹẹni. O le kọ ẹgbẹ tirẹ ki o jere owo-igbimọ afikun. Kan si wa fun awọn alaye.',
+    ctaTitle: 'Bẹrẹ Ipolowo Loni',
+    ctaDesc: 'Ko si owo lati bẹrẹ — darapọ loni, bẹrẹ jija ọla',
+    ctaBtn: 'Kan si wa nipasẹ Telegram',
+    ctaNote: 'Ko si software afikun · Ìmọ̀ràn ọ̀fẹ́',
+    footer: 'Pẹpẹ Aṣoju Ipolowo Ere © 2025',
+    disclaimer: 'Awọn abajade kii ṣe aṣoju. Awọn abajade kọọkan le yatọ.',
+    affiliateDisclosure: 'Oju-iwe yii ni awọn ọna asopọ alafaramo. A le jere owo-igbimọ laisi idiyele afikun si ọ.',
+    privacyLink: 'Ilana Aṣiri',
+  },
+  ig: {
+    badge: '30% Ụgwọ Ọrụ Dị Elu',
+    heroTitle: 'Bụrụ Onye Nnọchite Anyị Mgbasa Egwuregwu',
+    heroDesc: 'Malite n\'enweghị ego, ịkwụ ụgwọ kwa ụbọchị. Kpọsa egwuregwu ndị ị hụrụ n\'anya, nweta ego nkwụsi ike',
+    statCommission: 'Oke Ego',
+    statCostNum: '0',
+    statCost: 'Ego Mmalite',
+    statDailyNum: 'Kwa Ụbọchị',
+    statDaily: 'Ịkwụ Ụgwọ Kwa Ụbọchị',
+    telegramBtn: 'Kpọtụrụ Anyị na Telegram',
+    replyTime: 'Nkezi azịza n\'ime nkeji 2',
+    benefitsTitle: 'Mere Anyị Ji Họrọ Anyị?',
+    benefitsDesc: 'Ngwa kacha mma iji lekwasị anya n\'ịkpata ego',
+    benefit1Title: '30% Oke Ego',
+    benefit1Desc: 'Nweta ego mgbe ndị egwuregwu ị kpọbatara na-egwu egwuregwu. Ịkwụ ụgwọ kwa ụbọchị, enweghị opekempe ịdọrọ',
+    benefit2Title: 'Mmalite Efu',
+    benefit2Desc: 'Enweghị nkwụnye ego, enweghị ngwaahịa. Debanye aha wee nweta ohere onye nnọchite anya ozugbo',
+    benefit3Title: 'Egwuregwu Ndị Kacha Mma',
+    benefit3Desc: 'Egwuregwu tozuru etozu nke na-ejigide ndị egwuregwu maka ịkpata ego ka mma',
+    benefit4Title: 'Dashboard Ozugbo',
+    benefit4Desc: 'Soro data mgbasa ozi gị, ntinye ego ndị egwuregwu na ụgwọ ọrụ akwụgoro na nghọta zuru oke',
+    stepsTitle: 'Nzọụkwụ 3 Iji Bụrụ Onye Nnọchite Anyị',
+    stepsDesc: 'Nzọụkwụ dị mfe ịmalite ịkpata ụgwọ ọrụ',
+    step1: 'Pịa bọtịnụ dị n\'okpuru ịtinye Telegram客服 anyị',
+    step2: 'Gwa ndị otu anyị okwu iji mee ka akaụntụ gị rụọ ọrụ',
+    step3: 'Nweta njikọ ntụnye gị wee malite ịkpata ego',
+    testimonialsTitle: 'Ihe ndị nnọchite anyị na-ekwu',
+    testimonialsDesc: 'Nụrụ n\'aka ndị nnọchite anyị',
+    testimonial1Text: 'Mgbe ọnwa abụọ gasịrị, ana m enweta 8000+ kwa ọnwa. Ọ dị mfe karịa ka m chere.',
+    testimonial1Author: '— James, ọnwa 2',
+    testimonial2Text: 'N\'ụbọchị mbụ m kpọbatara mmadụ 5 wee nweta $200 ụgwọ ọrụ. Ịkwụ ụgwọ kwa ụbọchị bụ eziokwu ma dị ọsọ.',
+    testimonial2Author: '— Sarah, ọnwa 1',
+    faqTitle: 'Ajụjụ Ndị A Na-ajụkarị',
+    faq1q: 'Kedu ihe m chọrọ iji bụrụ onye nnọchite anyị?',
+    faq1a: 'Enweghị ihe achọrọ. Ọ bụrụ na ị nwere ekwentị ma nwee ike iji Telegram, ị nwere ike ịbụ onye nnọchite anyị. Anyị na-enye ọzụzụ zuru ezu.',
+    faq3q: 'Enwere m ike iwe ndị nnọchite anyị n\'okpuru m?',
+    faq3a: 'Ee. Ị nwere ike wuo otu nke gị wee nweta ụgwọ ọrụ agbakwunyere. Kpọtụrụ anyị maka nkọwa.',
+    ctaTitle: 'Malite Mgbasa Ozi Taa',
+    ctaDesc: 'Ego efu ịmalite — sonye taa, malite ịkpata ego echi',
+    ctaBtn: 'Kpọtụrụ Anyị na Telegram',
+    ctaNote: 'Enweghị ngwa ọzọ achọrọ · Ndụmọdụ efu',
+    footer: 'Ikpo Okwu Onye Nnọchite Anyị Mgbasa Egwuregwu © 2025',
+    disclaimer: 'Nsonaazụ abụghị ihe nkịtị. Nsonaazụ onye ọ bụla nwere ike ịdị iche.',
+    affiliateDisclosure: 'Peeji a nwere njikọ mmekọ. Anyị nwere ike nweta ụgwọ ọrụ na-enweghị ụgwọ ọzọ nye gị.',
+    privacyLink: 'Iwu Nzuzo',
+  },
+};
+
+function getSystemLang() {
+  const lang = navigator.language || navigator.userLanguage || '';
+  const code = lang.split('-')[0];
+  if (i18n[code]) return code;
+  return 'en';
+}
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  document.title = i18n[lang].heroTitle + ' - ' + i18n[lang].badge;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (i18n[lang][key]) {
+      el.textContent = i18n[lang][key];
+    }
+  });
+  document.getElementById('lang-select').value = lang;
+}
+
+const systemLang = getSystemLang();
+applyLang(systemLang);
+
+document.getElementById('lang-select').addEventListener('change', e => {
+  applyLang(e.target.value);
+});
+
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const expanded = q.getAttribute('aria-expanded') === 'true';
+    q.setAttribute('aria-expanded', !expanded);
+    q.classList.toggle('open');
+    q.nextElementSibling.classList.toggle('open');
+  });
+});
+
+const bottomBar = document.getElementById('bottomBar');
+function updateBottomBar() {
+  bottomBar.style.display = window.innerWidth < 768 ? 'flex' : 'none';
+}
+updateBottomBar();
+window.addEventListener('resize', updateBottomBar);
+</script>
+</body>
+</html>
