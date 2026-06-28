@@ -547,15 +547,10 @@
 <!-- Event snippet for 咨询报价 conversion page -->
 <script>
 function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
   gtag('event', 'conversion', {
-      'send_to': 'AW-11483504539/8Ut3CMnT9MYcEJu_4eMq',
-      'event_callback': callback
+      'send_to': 'AW-11483504539/8Ut3CMnT9MYcEJu_4eMq'
   });
+  if (url) window.location = url;
   return false;
 }
 </script>
