@@ -535,6 +535,30 @@
     .benefit-card { margin-bottom: 0; }
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11483504539"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11483504539');
+</script>
+<!-- Event snippet for 咨询报价 conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11483504539/8Ut3CMnT9MYcEJu_4eMq',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 <body>
 
@@ -567,7 +591,7 @@
       <div class="hero-stat-label" data-i18n="statDaily">Daily Payout</div>
     </div>
   </div>
-  <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="telegramBtn" aria-label="Contact us via Telegram">Contact via Telegram</a>
+  <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="telegramBtn" aria-label="Contact us via Telegram" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
   <div class="reply-time" data-i18n="replyTime">Average reply within 2 minutes</div>
 </header>
 
@@ -663,7 +687,7 @@
   <section class="cta-section" aria-labelledby="cta-heading">
     <h2 id="cta-heading" data-i18n="ctaTitle">Start Promoting Today</h2>
     <p data-i18n="ctaDesc">Zero cost to start — join today, start earning tomorrow</p>
-    <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="ctaBtn" aria-label="Contact us via Telegram">Contact via Telegram</a>
+    <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="ctaBtn" aria-label="Contact us via Telegram" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
     <div class="footnote" data-i18n="ctaNote">No extra software needed · Free consultation</div>
   </section>
 </main>
@@ -675,7 +699,7 @@
 </footer>
 
 <div class="bottom-bar" id="bottomBar">
-  <a class="btn btn-telegram" href="https://t.me/masontiny" data-i18n="ctaBtn">Contact via Telegram</a>
+  <a class="btn btn-telegram" href="https://t.me/masontiny" data-i18n="ctaBtn" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
 </div>
 
 <script>
