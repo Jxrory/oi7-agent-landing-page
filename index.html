@@ -37,6 +37,14 @@
     --font: 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
   }
 
+  #unichat-widget {
+    --widget-primary-color: #0f0f23;
+    --widget-font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+    --widget-btn-icon-color: #ffffff;
+    --widget-header-icon-color: #ffffff;
+    --widget-send-icon-color: #ffffff;
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --color-bg: #0f0f1a;
@@ -94,6 +102,28 @@
   .lang-bar select option {
     color: #1a1a2e;
     background: #fff;
+  }
+
+  .lang-telegram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lang-telegram:hover {
+    background: var(--color-telegram);
+    color: #fff;
+    border-color: var(--color-telegram);
+    text-decoration: none;
   }
 
   .hero {
@@ -559,6 +589,9 @@ function gtag_report_conversion(url) {
 
 <header class="hero">
   <div class="lang-bar">
+    <a class="lang-telegram" href="https://t.me/masontiny" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.127.037.272.037.435 0 .054-.003.11-.009.167l-1.126 5.8c-.153.657-.54.813-1.094.508l-3.02-2.177c-.43-.302-.437-.764-.095-1.107l2.647-2.584c.184-.18.07-.344-.178-.213l-3.894 2.484c-.522.332-1.015.32-1.492-.087l-1.789-1.46c-.455-.367-.42-.72.107-.96l10.29-3.883c.333-.138.637-.177.89-.132z"/></svg>
+    </a>
     <select id="lang-select" aria-label="Language">
       <option value="en">English</option>
       <option value="ha">Hausa</option>
@@ -586,7 +619,7 @@ function gtag_report_conversion(url) {
       <div class="hero-stat-label" data-i18n="statDaily">Daily Payout</div>
     </div>
   </div>
-  <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="telegramBtn" aria-label="Contact us via Telegram" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
+  <a class="btn btn-telegram btn-hero" href="#" data-i18n="telegramBtn" aria-label="Chat with us" onclick="return openChatWidget();">Chat Now</a>
   <div class="reply-time" data-i18n="replyTime">Average reply within 2 minutes</div>
 </header>
 
@@ -636,7 +669,7 @@ function gtag_report_conversion(url) {
     <div class="steps">
       <div class="step-item">
         <span class="step-num" aria-hidden="true">1</span>
-        <p data-i18n="step1">Click the button below to add our Telegram support</p>
+        <p data-i18n="step1">Click the button below to chat with our team</p>
       </div>
       <div class="step-item">
         <span class="step-num" aria-hidden="true">2</span>
@@ -682,7 +715,7 @@ function gtag_report_conversion(url) {
   <section class="cta-section" aria-labelledby="cta-heading">
     <h2 id="cta-heading" data-i18n="ctaTitle">Start Promoting Today</h2>
     <p data-i18n="ctaDesc">Zero cost to start — join today, start earning tomorrow</p>
-    <a class="btn btn-telegram btn-hero" href="https://t.me/masontiny" data-i18n="ctaBtn" aria-label="Contact us via Telegram" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
+    <a class="btn btn-telegram btn-hero" href="#" data-i18n="ctaBtn" aria-label="Chat with us" onclick="return openChatWidget();">Chat Now</a>
     <div class="footnote" data-i18n="ctaNote">No extra software needed · Free consultation</div>
   </section>
 </main>
@@ -694,7 +727,7 @@ function gtag_report_conversion(url) {
 </footer>
 
 <div class="bottom-bar" id="bottomBar">
-  <a class="btn btn-telegram" href="https://t.me/masontiny" data-i18n="ctaBtn" onclick="return gtag_report_conversion(this.href);">Contact via Telegram</a>
+  <a class="btn btn-telegram" href="#" data-i18n="ctaBtn" onclick="return openChatWidget();">Chat Now</a>
 </div>
 
 <script>
@@ -708,7 +741,7 @@ const i18n = {
     statCost: '启动成本',
     statDailyNum: '日结',
     statDaily: '佣金到账',
-    telegramBtn: '添加 Telegram 咨询',
+    telegramBtn: '立即咨询',
     replyTime: '平均 2 分钟内回复',
     benefitsTitle: '为什么选择我们',
     benefitsDesc: '给你最好的工具和条件，专注推广赚钱',
@@ -722,7 +755,7 @@ const i18n = {
     benefit4Desc: '随时查看你的推广数据、玩家充值明细和已结算佣金，完全透明',
     stepsTitle: '三步成为代理',
     stepsDesc: '简单三步，开始赚取佣金',
-    step1: '点击下方按钮添加 Telegram 客服',
+    step1: '点击下方按钮联系在线客服',
     step2: '客服对接，开通你的专属代理账号',
     step3: '获取推广链接，开始赚取佣金',
     testimonialsTitle: '代理真实反馈',
@@ -738,7 +771,7 @@ const i18n = {
     faq3a: '可以。你可以发展自己的团队，下级代理的推广流水你也能获得额外分成。具体比例请联系客服了解。',
     ctaTitle: '立即开始推广',
     ctaDesc: '零成本启动，今天就加入，明天开始赚佣金',
-    ctaBtn: '添加 Telegram 咨询',
+    ctaBtn: '立即咨询',
     ctaNote: '无需下载额外软件 · 免费咨询',
     footer: '游戏推广代理招募平台 © 2025',
     disclaimer: '结果非典型。实际收入因人而异。',
@@ -754,7 +787,7 @@ const i18n = {
     statCost: 'Startup Cost',
     statDailyNum: 'Daily',
     statDaily: 'Daily Payout',
-    telegramBtn: 'Contact via Telegram',
+    telegramBtn: 'Chat Now',
     replyTime: 'Average reply within 2 minutes',
     benefitsTitle: 'Why Choose Us',
     benefitsDesc: 'Best tools and conditions to focus on earning',
@@ -768,7 +801,7 @@ const i18n = {
     benefit4Desc: 'Track your promotion data, player deposits, and settled commissions with full transparency',
     stepsTitle: '3 Steps to Become an Agent',
     stepsDesc: 'Simple steps to start earning commissions',
-    step1: 'Click the button below to add our Telegram support',
+    step1: 'Click the button below to chat with our team',
     step2: 'Talk to our team to activate your agent account',
     step3: 'Get your referral link and start earning',
     testimonialsTitle: 'Agent Testimonials',
@@ -784,7 +817,7 @@ const i18n = {
     faq3a: 'Yes. You can build your own team and earn extra commissions from your sub-agents\' revenue. Contact us for details.',
     ctaTitle: 'Start Promoting Today',
     ctaDesc: 'Zero cost to start — join today, start earning tomorrow',
-    ctaBtn: 'Contact via Telegram',
+    ctaBtn: 'Chat Now',
     ctaNote: 'No extra software needed · Free consultation',
     footer: 'Game Promotion Agent Platform © 2025',
     disclaimer: 'Results not typical. Individual results may vary.',
@@ -800,7 +833,7 @@ const i18n = {
     statCost: 'Kuɗin Farawa',
     statDailyNum: 'Kullum',
     statDaily: 'Biya Kullum',
-    telegramBtn: 'Tuntuɓi ta Telegram',
+    telegramBtn: 'Tuntuɓi Yanzu',
     replyTime: 'Ana amsawa cikin minti 2',
     benefitsTitle: 'Me ya sa za mu zaɓa',
     benefitsDesc: 'Muna ba ka kayan aiki mafi kyau don samun kuɗi',
@@ -814,7 +847,7 @@ const i18n = {
     benefit4Desc: 'Ka duba yadda tallan ka ke tafiya a kowane lokaci, cikakken bayyane',
     stepsTitle: 'Matakai 3 don zama Wakili',
     stepsDesc: 'Matakai masu sauƙi don fara samun kuɗi',
-    step1: 'Danna maɓallin da ke ƙasa don ƙara Telegram客服',
+    step1: 'Danna maɓallin da ke ƙasa don tuntuɓar mu',
     step2: 'Tattauna da ƙungiyarmu don kunna asusunka',
     step3: 'Sami hanyar tallan ka kuma fara samun kuɗi',
     testimonialsTitle: 'Abin da Wakilanmu ke cewa',
@@ -830,7 +863,7 @@ const i18n = {
     faq3a: 'E. Za ka iya gina ƙungiyarka kuma ka sami ƙarin riba daga wakilan ka. Tuntuɓe mu don cikakkun bayanai.',
     ctaTitle: 'Fara Tallan Yau',
     ctaDesc: 'Fara kyauta — shiga yau, fara samun kuɗi gobe',
-    ctaBtn: 'Tuntuɓi ta Telegram',
+    ctaBtn: 'Tuntuɓi Yanzu',
     ctaNote: 'Babu buƙatar sauran Software · Shawara kyauta',
     footer: 'Dandalin Wakilan Tallan Wasa © 2025',
     disclaimer: 'Sakamako ba na al\'ada ba. Sakamako na iya bambanta.',
@@ -846,7 +879,7 @@ const i18n = {
     statCost: 'تكلفة البدء',
     statDailyNum: 'يومي',
     statDaily: 'دفع يومي',
-    telegramBtn: 'تواصل عبر تيليغرام',
+    telegramBtn: 'تواصل الآن',
     replyTime: 'متوسط الرد خلال دقيقتين',
     benefitsTitle: 'لماذا تختارنا',
     benefitsDesc: 'أفضل الأدوات والشروط لتتفرغ للربح',
@@ -860,7 +893,7 @@ const i18n = {
     benefit4Desc: 'تتبع بيانات ترويجك وإيداعات اللاعبين والعمولات المدفوعة بشفافية كاملة',
     stepsTitle: '3 خطوات لتصبح وكيلاً',
     stepsDesc: 'خطوات بسيطة لبدء كسب العمولات',
-    step1: 'انقر الزر أدناه لإضافة خدمة عملاء تيليغرام',
+    step1: 'انقر الزر أدناه للتواصل مع فريقنا',
     step2: 'تحدث مع فريقنا لتفعيل حساب الوكيل الخاص بك',
     step3: 'احصل على رابط الإحالة وابدأ في الكسب',
     testimonialsTitle: 'شهادات الوكلاء',
@@ -876,7 +909,7 @@ const i18n = {
     faq3a: 'نعم. يمكنك بناء فريقك الخاص وكسب عمولات إضافية من إيرادات وكلائك الفرعيين. اتصل بنا للتفاصيل.',
     ctaTitle: 'ابدأ الترويج اليوم',
     ctaDesc: 'تكلفة صفر للبدء — انضم اليوم، وابدأ الكسب غداً',
-    ctaBtn: 'تواصل عبر تيليغرام',
+    ctaBtn: 'تواصل الآن',
     ctaNote: 'لا حاجة لبرامج إضافية · استشارة مجانية',
     footer: 'منصة وكيل ترويج الألعاب © 2025',
     disclaimer: 'النتائج ليست نموذجية. النتائج الفردية قد تختلف.',
@@ -892,7 +925,7 @@ const i18n = {
     statCost: 'Coût de Démarrage',
     statDailyNum: 'Quotidien',
     statDaily: 'Paiement Quotidien',
-    telegramBtn: 'Contactez-nous sur Telegram',
+    telegramBtn: 'Contactez-nous',
     replyTime: 'Réponse moyenne en 2 minutes',
     benefitsTitle: 'Pourquoi Nous Choisir',
     benefitsDesc: 'Les meilleurs outils et conditions pour vous concentrer sur le profit',
@@ -906,7 +939,7 @@ const i18n = {
     benefit4Desc: 'Suivez vos données de promotion, dépôts des joueurs et commissions réglées en toute transparence',
     stepsTitle: '3 Étapes pour Devenir Agent',
     stepsDesc: 'Des étapes simples pour commencer à gagner',
-    step1: 'Cliquez sur le bouton ci-dessous pour ajouter notre service Telegram',
+    step1: 'Cliquez sur le bouton ci-dessous pour discuter avec notre équipe',
     step2: 'Parlez à notre équipe pour activer votre compte agent',
     step3: 'Obtenez votre lien de parrainage et commencez à gagner',
     testimonialsTitle: 'Témoignages d\'Agents',
@@ -922,7 +955,7 @@ const i18n = {
     faq3a: 'Oui. Vous pouvez constituer votre propre équipe et gagner des commissions supplémentaires sur les revenus de vos sous-agents.',
     ctaTitle: 'Commencez à Promouvoir Aujourd\'hui',
     ctaDesc: 'Coût zéro pour démarrer — rejoignez aujourd\'hui, gagnez demain',
-    ctaBtn: 'Contactez-nous sur Telegram',
+    ctaBtn: 'Contactez-nous',
     ctaNote: 'Aucun logiciel supplémentaire · Consultation gratuite',
     footer: 'Plateforme d\'Agent de Promotion de Jeux © 2025',
     disclaimer: 'Résultats non typiques. Les résultats individuels peuvent varier.',
@@ -938,7 +971,7 @@ const i18n = {
     statCost: 'Iye Owo Ibẹrẹ',
     statDailyNum: 'Ojoojumo',
     statDaily: 'Sanwo Ojoojumo',
-    telegramBtn: 'Kan si wa nipasẹ Telegram',
+    telegramBtn: 'Kan si wa Bayi',
     replyTime: 'Aṣiwere idahun laarin iṣẹju 2',
     benefitsTitle: 'Kí Ló Dé Tí A Fi Yàn Á',
     benefitsDesc: 'Awọn irinṣẹ ti o dara julọ lati dojukọ pipa owo',
@@ -952,7 +985,7 @@ const i18n = {
     benefit4Desc: 'Tọpa data ipolowo rẹ, idogo elere ati awọn owo-igbimọ ti a san ni kikun sihin',
     stepsTitle: 'Awọn Igbesẹ 3 lati Di Aṣoju',
     stepsDesc: 'Awọn igbesẹ rọrun lati bẹrẹ jija owo-igbimọ',
-    step1: 'Tẹ bọtini ni isalẹ lati fi Telegram客服 wa kun',
+    step1: 'Tẹ bọtini ni isalẹ lati ba wa sọrọ',
     step2: 'Ba ẹgbẹ wa sọrọ lati mu akọọlẹ aṣoju rẹ ṣiṣẹ',
     step3: 'Gba ọna asopọ itọka rẹ ki o bẹrẹ jija',
     testimonialsTitle: 'Awọn Ẹri Aṣoju',
@@ -968,7 +1001,7 @@ const i18n = {
     faq3a: 'Bẹẹni. O le kọ ẹgbẹ tirẹ ki o jere owo-igbimọ afikun. Kan si wa fun awọn alaye.',
     ctaTitle: 'Bẹrẹ Ipolowo Loni',
     ctaDesc: 'Ko si owo lati bẹrẹ — darapọ loni, bẹrẹ jija ọla',
-    ctaBtn: 'Kan si wa nipasẹ Telegram',
+    ctaBtn: 'Kan si wa Bayi',
     ctaNote: 'Ko si software afikun · Ìmọ̀ràn ọ̀fẹ́',
     footer: 'Pẹpẹ Aṣoju Ipolowo Ere © 2025',
     disclaimer: 'Awọn abajade kii ṣe aṣoju. Awọn abajade kọọkan le yatọ.',
@@ -984,7 +1017,7 @@ const i18n = {
     statCost: 'Ego Mmalite',
     statDailyNum: 'Kwa Ụbọchị',
     statDaily: 'Ịkwụ Ụgwọ Kwa Ụbọchị',
-    telegramBtn: 'Kpọtụrụ Anyị na Telegram',
+    telegramBtn: 'Kpọtụrụ Anyị Ugbu a',
     replyTime: 'Nkezi azịza n\'ime nkeji 2',
     benefitsTitle: 'Mere Anyị Ji Họrọ Anyị?',
     benefitsDesc: 'Ngwa kacha mma iji lekwasị anya n\'ịkpata ego',
@@ -998,7 +1031,7 @@ const i18n = {
     benefit4Desc: 'Soro data mgbasa ozi gị, ntinye ego ndị egwuregwu na ụgwọ ọrụ akwụgoro na nghọta zuru oke',
     stepsTitle: 'Nzọụkwụ 3 Iji Bụrụ Onye Nnọchite Anyị',
     stepsDesc: 'Nzọụkwụ dị mfe ịmalite ịkpata ụgwọ ọrụ',
-    step1: 'Pịa bọtịnụ dị n\'okpuru ịtinye Telegram客服 anyị',
+    step1: 'Pịa bọtịnụ dị n\'okpuru ikwu okwu na ndị otu anyị',
     step2: 'Gwa ndị otu anyị okwu iji mee ka akaụntụ gị rụọ ọrụ',
     step3: 'Nweta njikọ ntụnye gị wee malite ịkpata ego',
     testimonialsTitle: 'Ihe ndị nnọchite anyị na-ekwu',
@@ -1014,7 +1047,7 @@ const i18n = {
     faq3a: 'Ee. Ị nwere ike wuo otu nke gị wee nweta ụgwọ ọrụ agbakwunyere. Kpọtụrụ anyị maka nkọwa.',
     ctaTitle: 'Malite Mgbasa Ozi Taa',
     ctaDesc: 'Ego efu ịmalite — sonye taa, malite ịkpata ego echi',
-    ctaBtn: 'Kpọtụrụ Anyị na Telegram',
+    ctaBtn: 'Kpọtụrụ Anyị Ugbu a',
     ctaNote: 'Enweghị ngwa ọzọ achọrọ · Ndụmọdụ efu',
     footer: 'Ikpo Okwu Onye Nnọchite Anyị Mgbasa Egwuregwu © 2025',
     disclaimer: 'Nsonaazụ abụghị ihe nkịtị. Nsonaazụ onye ọ bụla nwere ike ịdị iche.',
@@ -1058,6 +1091,13 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
+var _chatWidget = null;
+function openChatWidget() {
+  if (_chatWidget) _chatWidget.open();
+  gtag_report_conversion();
+  return false;
+}
+
 const bottomBar = document.getElementById('bottomBar');
 function updateBottomBar() {
   bottomBar.style.display = window.innerWidth < 768 ? 'flex' : 'none';
@@ -1066,10 +1106,14 @@ updateBottomBar();
 window.addEventListener('resize', updateBottomBar);
 </script>
 
-<script src="widget.js"
-  data-inbox="web"
-  data-embed-key="2474b9db11db172b4b51108f86809e66dd8fd9d13f1f2f9795ac5b013554f0f2"
-  data-base-url="https://unichat.makemoney2g.com">
+<script src="widget.js"></script>
+<script>
+_chatWidget = UnichatWidget.init({
+  inbox: "web",
+  embedKey: "2474b9db11db172b4b51108f86809e66dd8fd9d13f1f2f9795ac5b013554f0f2",
+  baseUrl: "https://unichat.makemoney2g.com",
+  hideButton: true
+});
 </script>
 </body>
 </html>
